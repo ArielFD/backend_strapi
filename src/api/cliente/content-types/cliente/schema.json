@@ -1,0 +1,73 @@
+{
+  "kind": "collectionType",
+  "collectionName": "clientes",
+  "info": {
+    "singularName": "cliente",
+    "pluralName": "clientes",
+    "displayName": "cliente",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre": {
+      "type": "string",
+      "required": true,
+      "maxLength": 50
+    },
+    "apellidos": {
+      "type": "string",
+      "required": true,
+      "maxLength": 100
+    },
+    "identificacion": {
+      "type": "string",
+      "required": true,
+      "maxLength": 20
+    },
+    "telefonoCelular": {
+      "type": "string",
+      "maxLength": 20
+    },
+    "otroTelefono": {
+      "type": "string",
+      "maxLength": 20
+    },
+    "direccion": {
+      "type": "string",
+      "maxLength": 200
+    },
+    "fNacimiento": {
+      "type": "date",
+      "required": true
+    },
+    "fAfiliacion": {
+      "type": "date",
+      "required": true
+    },
+    "sexo": {
+      "type": "string",
+      "required": true,
+      "maxLength": 1,
+      "enum": [
+        "F",
+        "M"
+      ]
+    },
+    "resenaPersonal": {
+      "type": "string",
+      "maxLength": 200
+    },
+    "imagen": {
+      "type": "string"
+    },
+    "interes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::interes.interes",
+      "mappedBy": "cliente"
+    }
+  }
+}

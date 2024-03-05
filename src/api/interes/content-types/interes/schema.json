@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "intereses",
+  "info": {
+    "singularName": "interes",
+    "pluralName": "intereses",
+    "displayName": "Interes"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre_interes": {
+      "type": "string"
+    },
+    "descripcion": {
+      "type": "string"
+    },
+    "cliente": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::cliente.cliente",
+      "inversedBy": "interes"
+    }
+  }
+}
